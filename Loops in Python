@@ -1,0 +1,121 @@
+# program for numbers which cannot be divided by 3 and 5
+for i in range(1, 20):
+    if i % 3 and i % 5:
+        print(i)
+
+# Where to use Continue in loops
+for i in range(8):
+    if i == (3 and 6):
+        continue
+    print("hello", i)
+
+# Where to use Break in loops
+for i in range(5):
+    if i == 3:
+        break
+    print("hello", i)
+
+# Where to use Pass in loops
+for i in range(4):
+    if i == 3:
+        pass
+    print("Hello king", i)
+
+# Where to use for else in program
+numbers = [12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
+
+for num in numbers:
+
+    if num % 19 == 0:
+        print(num)
+        break
+else:
+    print("Not Found")
+
+
+# Finding out prime numbers
+num = int(input("Guess any number you want : "))
+if num == 1:
+    print("It's not a Prime Number")
+    exit()
+
+for i in range(2, num):
+    if num % i == 0:
+        print("It's not a Prime Number")
+        break
+else:
+    print("It's a Prime Number")
+
+
+# Square Pattern
+n = int(input("Value of n: "))
+
+for i in range(n):
+    for j in range(n):
+        print("# ", end="")
+    print()
+
+
+# Increasing Triangle Pattern
+n = int(input("Value of n: "))
+
+for i in range(n):
+    for j in range(i+1):
+        print("# ", end="")
+    print()
+
+
+# Decreasing Triangle Pattern
+n = int(input("Value of n: "))
+
+for i in range(n):
+    for j in range(n-i):
+        print("# ", end="")
+    print()
+
+# Right Sided Triangle
+n = int(input("Value of n: "))
+
+for i in range(n):
+    for j in range(n-i):
+        print(" ", end="")
+    for j in range(i+1):
+        print("#", end="")
+    print()
+
+
+# Right Sided Triangle (Upside Down)
+n = int(input("Value of n: "))
+
+for i in range(n):
+    for j in range(i+1):
+        print(" ", end="")
+    for j in range(n-i):
+        print("#", end="")
+    print()
+
+
+# Hill Pattern
+n = int(input("Value of n: "))
+
+for i in range(n):
+    for j in range(n-i):
+        print(" ", end="")
+    for j in range(i+1):
+        print("#", end="")
+    for j in range(i):
+        print("#", end="")
+    print()
+
+
+# Reverse Hill Pattern
+n = int(input("Value of n: "))
+
+for i in range(n):
+    for j in range(i+1):
+        print(" ", end="")
+    for j in range(n-i):
+        print("#", end="")
+    for j in range(n-i-1):
+        print("#", end="")
+    print()
