@@ -1,0 +1,69 @@
+# Uses and work of array in python
+from array import *
+
+values = array('i', [1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+newArr = array(values.typecode, (a*a for a in values))
+# print(values.buffer_info())
+# for i in newArr:
+#     print(i)
+i = 0
+
+while i < len(newArr):
+    print(newArr[i])
+    i += 1
+import time
+
+# How to take input from array in python
+from array import *
+
+arr = array('i', [])
+
+n = int(input("Enter the length of array: "))
+
+for i in range(n):
+    x = int(input("Enter the value: "))
+    arr.append(x)
+
+print(arr)
+
+# How to search value in the array
+val = int(input("Enter the value you want to search: "))
+
+k = 0
+for e in arr:
+    if e == val:
+        print(f"The index of the value is {k}")
+        break
+
+    k += 1
+
+print(arr.index(val))
+
+# Ways for creating array in numpy
+from numpy import *
+
+# by array
+arr = array([1, 2, 3, 4, 5.1])
+print(arr.dtype)
+print(arr)
+
+# by linspace
+arr = linspace(0, 22)
+print(arr)
+
+# by arange
+arr = arange(1, 14, 3)
+print(arr)
+
+# by logspace
+arr = logspace(1, 4, 10)
+print(arr)
+
+# by zeros
+arr = zeros(7)
+print(arr)
+
+# by ones
+arr = ones(4, int)
+print(arr)
