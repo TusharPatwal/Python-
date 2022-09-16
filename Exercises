@@ -1,0 +1,9 @@
+# Exercise 1: Accept numbers from a user
+# Write a program to accept two numbers from the user and calculate multiplication
+
+Number1 = int(input("Write the first value : "))
+Number2 = int(input("Write the second value : "))
+
+Product = Number1 * Number2
+
+print(Product)
