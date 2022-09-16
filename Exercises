@@ -13,3 +13,9 @@ print(Product)
 print('Name', 'Is', 'James', sep='**')
 
 
+# Exercise 3: Convert Decimal number to Binary using print() output formatting
+# Given: num = 8
+# Expected Output: The binary number of decimal number 8 is 1000
+
+num = int(input("Give the value: "))
+print(bin(num))
