@@ -80,3 +80,24 @@ a = [1, 1, 2, 3, 5, 8, 3, 4, 3, 2, 80, 8, 9]
 for i in a:
     if i < 5:
         print(f"{i} is smaller than 5")
+        
+        
+# Exercise 10: Create a program that asks the user for a number and then prints out a list of all the divisors of that number. (If you don’t know what a divisor is, it is a number that divides evenly into another number.
+
+num = int(input("Enter the value: "))
+listrange = list(range(1, num+1))
+divisor = []
+for i in listrange:
+    if num % i == 0:
+        divisor.append(i)
+print(divisor)
+
+
+# Exercise 11: Ask the user for a string and print out whether this string is a palindrome or not. (A palindrome is a string that reads the same forwards and backwards.)
+
+string = input("Enter the string: ")
+palindrome = string[::-1]
+if string == palindrome:
+    print("This word is a Palindrome.")
+else:
+    print("This word is not a Palindrome.")
