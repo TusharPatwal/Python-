@@ -32,7 +32,7 @@ elif x == 0:
     print("The number is even.")
 else:
     print("The number is odd.")
-
+    
 
 # Exercise 5: Python program to convert the temperature in degree centigrade to Fahrenheit
 # Formula: (0°C × 9/5) + 32 = 32°F
@@ -101,3 +101,13 @@ if string == palindrome:
     print("This word is a Palindrome.")
 else:
     print("This word is not a Palindrome.")
+
+
+# Exercise 12: Let’s say I give you a list saved in a variable: a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]. Write one code of Python that takes this list a and makes a new list that has only the even elements of this list in it.
+
+a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+new_a = []
+for i in a:
+    if i % 2 == 0:
+        new_a.append(i)
+print(new_a)
