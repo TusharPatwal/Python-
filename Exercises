@@ -111,3 +111,29 @@ for i in a:
     if i % 2 == 0:
         new_a.append(i)
 print(new_a)
+
+
+# Exercise 13: Make a Rock-Paper-Scissors game.
+import random
+possible_outcome = ["Rock", "Paper", "Scissors"]
+computer = random.choice(possible_outcome)
+user = input("Enter Rock-Paper-Scissors: ")
+if computer == user:
+    print("It's a tie")
+elif user == "Rock":
+    if computer == "Scissors":
+        print("Rock smashes scissors! You wins!")
+    elif computer == "Paper":
+        print("Paper covers rock! You lose")
+elif user == "Paper":
+    if computer == "Rock":
+        print("Paper covers rock! You wins!")
+    elif computer == "Scissors":
+        print("Scissors cuts paper! You lose")
+elif user == "Scissors":
+    if computer == "Paper":
+        print("Scissors cuts paper! You wins!")
+    elif computer == "Rock":
+        print("Rock smashes scissors! You lose")
+else:
+    print("Please write the correct input.")
