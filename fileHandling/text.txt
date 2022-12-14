@@ -1,0 +1,6 @@
+Jupyter Notebooks in VS Code. 
+Jupyter (formerly IPython Notebook) is an open-source project 
+that lets you easily combine Markdown text and executable 
+Python source code on one canvas called a notebook. 
+Visual Studio Code supports working with 
+Jupyter Notebooks natively, and through Python code files.
