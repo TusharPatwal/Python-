@@ -33,7 +33,29 @@ def displayRecord():
             print("Date of birth: ", stu[DateOfBirth])
             print("Total Marks: ",stu[TotalMarks])
         except EOFError:
-            print("File is empty. NO RECORD PRESENT TO DISPLAY")
+            print("\nFile Read Completed. No further Records found")
             break
+    f.close()
+    
+# for searching a record through rollno in file
+def searchRecord(r):
+    import pickle
+    f = open("StudentData.dat", "rb")
+    found = False
+    while True:
+        try:
+            student = pickle.file(f)
+            if student["RollNo"] == r:
+                print("Roll No: ", stu[RollNo])
+                print("Name: ", stu[Name])
+                print("Course: ", stu[Course])
+                print("Section: ", stu[Section])
+                print("Date of birth: ", stu[DateOfBirth])
+                print("Total Marks: ",stu[TotalMarks])
+                found = True
+        except EOFError:
+            break
+    if found == False:
+        print(f"No student record found with{r} Roll Number")
     f.close()
     
