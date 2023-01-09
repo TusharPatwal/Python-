@@ -19,3 +19,21 @@ def addRecord():
     f.close()
     print("New student Record is added successfully to file.")
     
+# for reading the record of file
+def displayRecord():
+    import pickle
+    f = open("StudentData.dat", "rb")
+    while True:
+        try:
+            stu = pickle.load(f)
+            print("Roll No: ", stu[RollNo])
+            print("Name: ", stu[Name])
+            print("Course: ", stu[Course])
+            print("Section: ", stu[Section])
+            print("Date of birth: ", stu[DateOfBirth])
+            print("Total Marks: ",stu[TotalMarks])
+        except EOFError:
+            print("File is empty. NO RECORD PRESENT TO DISPLAY")
+            break
+    f.close()
+    
