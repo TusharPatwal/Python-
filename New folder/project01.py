@@ -1,8 +1,10 @@
 import os
+import pickle
 
 # for inserting new student data to binary file
 def addRecord():
-    import pickle
+    f = open("StudentData.txt","ab")
+    student = {}
     rno = int(input("Enter Roll no.: "))
     name = input("Enter the name: ")
     course = input("Enter the course: ")
@@ -11,59 +13,52 @@ def addRecord():
     tMarks = int(input("Enter the total marks: "))
     
     # creating a dictionary to hold students data
-    student = {"RollNo":rno,"Name":name,"Course":course,"Section":sec,"DateOfBirth":dob,"TotalMarks":tMarks}
+    # student = {"RollNo":rno,"Name":name,"Course":course,"Section":sec,"DateOfBirth":dob,"TotalMarks":tMarks}
+    
+    student["Roll"] = rno
+    student["Name"] = name
+    student["Course"] = course
+    student["Section"] = sec
+    student["DateOfBirth"] = dob
+    student["TotalMarks"] = tMarks
+    
     
     # writing this record to file
-    f = open("StudentData.dat","ab")
+    
     pickle.dump(student, f)
     f.close()
     print("New student Record is added successfully to file.")
     
 # for reading the record of file
 def displayRecord():
-    import pickle
-    f = open("StudentData.dat", "rb")
+    f = open("StudentData.txt", "rb")
     while True:
         try:
-            stu = pickle.load(f)
-            print("Roll No: ", stu[RollNo])
-            print("Name: ", stu[Name])
-            print("Course: ", stu[Course])
-            print("Section: ", stu[Section])
-            print("Date of birth: ", stu[DateOfBirth])
-            print("Total Marks: ",stu[TotalMarks])
+            student = pickle.load(f)
+            print(student)
         except EOFError:
             print("\nFile Read Completed. No further Records found")
             break
     f.close()
     
 # for searching a record through rollno in file
-def searchRecord(r):
-    import pickle
-    f = open("StudentData.dat", "rb")
-    found = False
-    while True:
-        try:
-            student = pickle.file(f)
-            if student["RollNo"] == r:
-                print("Roll No: ", stu[RollNo])
-                print("Name: ", stu[Name])
-                print("Course: ", stu[Course])
-                print("Section: ", stu[Section])
-                print("Date of birth: ", stu[DateOfBirth])
-                print("Total Marks: ",stu[TotalMarks])
-                found = True
-        except EOFError:
-            break
-    if found == False:
-        print(f"No student record found with{r} Roll Number")
-    f.close()
+def searchRecord():
+    f = open("StudentData.txt", "rb")
+    found = 1
+    try:
+        r = int(input("Enter the roll number: "))
+        while True:
+            student = pickle.load(f)
+            if r == student["Roll"]:
+                print(student)
+                f = 0
+    except EOFError:
+        f.close()
     
 
 # for updating marks in file with rollno
-def updateMarks(r,m):
-    import pickle
-    f = open("StudentData.dat", "rb")
+def updateMarks():
+    f = open("StudentData.txt", "rb")
     
     # list variable to hold all records of student file
     studentLst = []
@@ -76,10 +71,10 @@ def updateMarks(r,m):
     f.close()
     
     for i in range(len(studentLst)):
-        if studentLst[i]["RollNo"]==r:
+        if studentLst[i]["Roll"]==r:
             studentLst[i]["TotalMarks"]=m
             
-    f = open("StudentData.dat", "wb")
+    f = open("StudentData.txt", "wb")
     for x in studentLst:
         pickle.dump(x, f)
     print("Marks Updated Successfully.")
@@ -87,9 +82,8 @@ def updateMarks(r,m):
     
 
 # for deleting a record from file
-def deleteRecord(r):
-    import pickle
-    f = open("StudentData.dat", "rb")
+def deleteRecord():
+    f = open("StudentData.txt", "rb")
     
     # list variable to hold all records of student file
     studentLst = []
@@ -104,7 +98,7 @@ def deleteRecord(r):
         if ans == "y" or ans == "Y":
             f = open("StudentData.dat", "wb")
             for x in studentLst:
-                if x["RollNo"] == r:
+                if x["Roll"] == r:
                     continue
                 pickle.dump(x, f)
             print("Student Record Deleted successfully.")
@@ -118,3 +112,16 @@ while True:
     print("Type 4 to update student marks in file.")
     print("Type 5 to delete student record")
     
+    choice = int(input("Enter your choice: "))
+    if choice == 1:
+        addRecord()
+    elif choice == 2:
+        displayRecord()
+    elif choice == 3:
+        searchRecord()
+    elif choice == 4:
+        updateMarks()
+    elif choice == 5:
+        deleteRecord()
+    else:
+        break
