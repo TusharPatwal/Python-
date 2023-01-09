@@ -86,3 +86,35 @@ def updateMarks(r,m):
     f.close()
     
 
+# for deleting a record from file
+def deleteRecord(r):
+    import pickle
+    f = open("StudentData.dat", "rb")
+    
+    # list variable to hold all records of student file
+    studentLst = []
+    while True:
+        try:
+            student = pickle.load(f)
+            studentLst.append(student)
+        except EOFError:
+            break
+        f.close()
+        ans = input("Are you sure to delete student record permanently?(Y/y for YES)")
+        if ans == "y" or ans == "Y":
+            f = open("StudentData.dat", "wb")
+            for x in studentLst:
+                if x["RollNo"] == r:
+                    continue
+                pickle.dump(x, f)
+            print("Student Record Deleted successfully.")
+            f.close()
+
+
+while True:
+    print("\nType 1 to add new student data to file.")
+    print("Type 2 to display all student data of file.")
+    print("Type 3 to search a student data in file.")
+    print("Type 4 to update student marks in file.")
+    print("Type 5 to delete student record")
+    
