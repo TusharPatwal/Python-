@@ -59,3 +59,30 @@ def searchRecord(r):
         print(f"No student record found with{r} Roll Number")
     f.close()
     
+
+# for updating marks in file with rollno
+def updateMarks(r,m):
+    import pickle
+    f = open("StudentData.dat", "rb")
+    
+    # list variable to hold all records of student file
+    studentLst = []
+    while True:
+        try:
+            student = pickle.load(f)
+            studentLst.append(student)
+        except EOFError:
+            break
+    f.close()
+    
+    for i in range(len(studentLst)):
+        if studentLst[i]["RollNo"]==r:
+            studentLst[i]["TotalMarks"]=m
+            
+    f = open("StudentData.dat", "wb")
+    for x in studentLst:
+        pickle.dump(x, f)
+    print("Marks Updated Successfully.")
+    f.close()
+    
+
