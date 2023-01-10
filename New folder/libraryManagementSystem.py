@@ -104,7 +104,7 @@ def main():
             update()
         elif opt == 4:
             delete()
-        elif opt == 5:
+        elif opt == 5: 
             Search()
         elif opt == 6:
             break

@@ -1,0 +1,12 @@
+import numpy as np
+# 8.What is a correct syntax to print the numbers [3, 4, 5] from the array below:
+arr = np.array([1,2,3,4,5,6,7])
+# (2 Points)
+
+print(arr[3:6])
+
+print(arr[2:5])
+
+print(arr[2:6])
+
+print(arr[2:4])
