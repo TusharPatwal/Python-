@@ -1,5 +1,4 @@
 import pickle
-
-lst = ['a','b','c','d']
-with open("file.txt","wb") as f:
-    pickle.dump(lst, f)
+mylist = ['a', 'b', 'c', 'd']
+with open('datafile.txt', 'wb') as fh:
+   pickle.dump(mylist, fh)
