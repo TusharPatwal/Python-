@@ -1,3 +1,4 @@
+# Number Guessing Game!
 from random import randint
 
 EASY_LEVEL = 10
@@ -33,10 +34,10 @@ def game():
         
         guess = int(input("Make a guess: "))
         turns = checkAnswer(guess, answer, turns)
-    if turns == 0:
-      print("You've run out of guesses, you lose.")
-      return
-    elif guess != answer:
-      print("Guess again.")
+        if turns == 0:
+            print("You've run out of guesses, you lose.")
+            return
+        elif guess != answer:
+            print("Guess again.")
       
 game()
