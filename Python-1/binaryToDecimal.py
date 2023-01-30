@@ -7,4 +7,4 @@ def bin_to_decimal(bin_num):
 print(bin_to_decimal('1010'))  # prints 10
 print(bin_to_decimal('110101'))  # prints 53
 print(bin_to_decimal('1'))  # prints 1
-print(bin_to_decimal('0'))  # prints 0
+print(bin_to_decimal('0'))  
