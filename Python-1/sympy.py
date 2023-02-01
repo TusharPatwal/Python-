@@ -1,4 +1,4 @@
-# # cook your dish here
+# random password generator
 
 import random
 import string
