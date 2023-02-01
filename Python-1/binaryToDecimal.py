@@ -1,3 +1,4 @@
+# binary to decimal
 def bin_to_decimal(bin_num):
     decimal_num = 0
     for digit in bin_num:
