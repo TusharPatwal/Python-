@@ -1,4 +1,4 @@
-# docstring(""" """): it is used show the use function while using
+# docstring(): it is used show the use function while using
 def sum(n,m):
     """use for sum of two integer"""
     return n+m
