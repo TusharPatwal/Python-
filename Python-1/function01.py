@@ -1,8 +1,8 @@
-# types of function argunments in python
+# types of function arguments in python
 
 # default arguments
 def add(a = 4,b = 1,c = 3):
-    '''Assign default values to argunment using '=' operator at the time of function defination'''
+    '''Assign default values to argument using '=' operator at the time of function defination'''
 
     return (a+b+c)
 
