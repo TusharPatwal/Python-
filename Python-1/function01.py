@@ -43,3 +43,10 @@ def dictionary(**a):
         print(i)
 
 dictionary(rollno=98,name='Tushar',course='BCA')
+
+
+# 9x9 matrix with numpy
+import numpy as np
+a = np.zeros((9,9))
+a[0::2]=1
+print(a)
